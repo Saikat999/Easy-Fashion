@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.mainpart {
+    width: 100%;
+    height: 93vh;
+    /* background-color: aqua; */
+}
+.banner-section {
+    width: 100%;
+    height: auto;
+}
+.banner-section img {
+    width: 100%;
+    height: 400px;
+}
+.product-section {
+    width: 100%;
+    height: auto;
+    /* background-color: blue; */
+}
+.footer {
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(76, 95, 95);
+    padding-top: 15px;
+    color: #fff;
+}
