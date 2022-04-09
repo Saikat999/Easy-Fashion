@@ -17,4 +17,10 @@ class AdminController extends Controller
         $admin->save();
         return $admin;
     }
+
+
+    public function index()
+    {
+        return view('admin.admin-login');
+    }
 }

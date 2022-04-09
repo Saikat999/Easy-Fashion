@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,6 @@ Route::post('/check',[AuthController::class,'check'])->name('check');
 
 Route::get('/product',[AuthController::class,'product'])->name('product');
 Route::get('/logout',[AuthController::class,'logout'])->name('logout');
+
+//Admin
+Route::get('/admin',[AdminController::class,'index']);
