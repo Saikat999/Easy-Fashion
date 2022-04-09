@@ -22,3 +22,4 @@ Route::get('/register',[AuthController::class,'registerpage'])->name('register')
 Route::post('/check',[AuthController::class,'check'])->name('check');
 
 Route::get('/product',[AuthController::class,'product'])->name('product');
+Route::get('/logout',[AuthController::class,'logout'])->name('logout');

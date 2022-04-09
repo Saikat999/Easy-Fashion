@@ -22,15 +22,21 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Products</a>
-                            </li>
-                            <li class="nav-item">
+                            
+                            @guest
+                                <li class="nav-item">
                                 <a class="nav-link" href="/login">Login</a>
-                            </li>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/register">Register</a>
+                                </li>
+
+                            @else
                             <li class="nav-item">
-                                <a class="nav-link" href="/register">Register</a>
+                                <a class="nav-link" href="/login">Logout</a>
                             </li>
+                            @endguest
+                           
                         </ul>
                         
                     </div>

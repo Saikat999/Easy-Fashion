@@ -28,6 +28,7 @@ class AuthController extends Controller
         $user = User::where('email','=',$req->email)->first();
         if($user){
              if(Hash::check($req->password, $user->password)){
+                 $req->session()->put('loginId',$user->id);
                 return redirect('/product');
         }else{
             return back();
@@ -40,6 +41,14 @@ class AuthController extends Controller
     {
         return view('layout.product');
     }
+
+    public function logout(){
+        if(Session::has('loginId')){
+            Session::pull();
+            return redirect('/login');
+        }
+    }
+
 
     
     
