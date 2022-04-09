@@ -23,4 +23,35 @@ class AdminController extends Controller
     {
         return view('admin.admin-login');
     }
+
+     public function adminlogin(Request $req)
+    {
+        $req->validate([
+            'email' => 'required',
+            'password'=>'required'
+            
+        ]);
+
+        $admin = Admin::where('email','=',$req->email)->first();
+        if($admin){
+             if(Hash::check($req->password, $admin->password)){
+                 $req->session()->put('loginId',$admin->id);
+                return redirect('/dashboard');
+        }else{
+            return back();
+        }
+        
+    }
+    }
+     public function dashboard()
+    {
+        return view('admin.dashboard');
+    }
+
+    public function logout(){
+        if(Session::has('loginId')){
+            Session::pull();
+            return redirect('/admin');
+        }
+    }
 }
